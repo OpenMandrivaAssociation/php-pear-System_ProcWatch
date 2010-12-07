@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.4.2
-Release:	%mkrel 11
+Release:	%mkrel 12
 Summary:	Monitor processes
 License:	PHP License
 Group:		Development/PHP
