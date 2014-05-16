@@ -1,11 +1,13 @@
 %define		_class		System
 %define		_subclass	ProcWatch
 %define		upstream_name	%{_class}_%{_subclass}
+%define __noautoreq /usr/bin/php
 
 Name:		php-pear-%{upstream_name}
 Version:	0.4.2
 Release:	15
 Summary:	Monitor processes
+
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/System_ProcWatch/
@@ -43,7 +45,6 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 
 %files
-%defattr(-,root,root)
 %doc %{upstream_name}-%{version}/docs/*
 %{_bindir}/*
 %{_datadir}/pear/%{_class}
@@ -52,70 +53,4 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 
 
-
-%changelog
-* Fri Dec 16 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-14mdv2012.0
-+ Revision: 742283
-- fix major breakage by careless packager
-
-* Fri May 27 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-13
-+ Revision: 679587
-- mass rebuild
-
-* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-12mdv2011.0
-+ Revision: 613779
-- the mass rebuild of 2010.1 packages
-
-* Tue Nov 17 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.4.2-11mdv2010.1
-+ Revision: 467093
-- spec cleanup
-- use pear installer
-- don't ship tests, even in documentation
-- own all directories
-- use rpm filetriggers starting from mandriva 2010.1
-
-* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 0.4.2-10mdv2010.0
-+ Revision: 441653
-- rebuild
-
-* Thu Jan 01 2009 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-9mdv2009.1
-+ Revision: 322668
-- rebuild
-
-* Thu Jul 17 2008 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-8mdv2009.0
-+ Revision: 237085
-- rebuild
-
-  + Olivier Blin <blino@mandriva.org>
-    - restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Sat Nov 11 2006 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-7mdv2007.0
-+ Revision: 82722
-- Import php-pear-System_ProcWatch
-
-* Fri Feb 10 2006 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-7mdk
-- new group (Development/PHP)
-
-* Fri Aug 26 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-6mdk
-- rebuilt to fix auto deps
-
-* Wed Aug 10 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-5mdk
-- rebuilt to use new pear auto deps/reqs from pld
-
-* Sun Jul 31 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-4mdk
-- fix deps
-
-* Thu Jul 21 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-3mdk
-- reworked the %%post and %%preun stuff, like in conectiva
-- fix deps
-
-* Wed Jul 20 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-2mdk
-- fix deps
-
-* Tue Jul 19 2005 Oden Eriksson <oeriksson@mandriva.com> 0.4.2-1mdk
-- initial Mandriva package (PLD import)
 
