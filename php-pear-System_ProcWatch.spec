@@ -5,7 +5,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.4.2
-Release:	15
+Release:	16
 Summary:	Monitor processes
 
 License:	PHP License
